@@ -1,6 +1,8 @@
 #define NUM_SWITCHES 2  // Number of switches
 const int switchPins[NUM_SWITCHES] = {D1, D7};  // GPIO pins for switches
-// const int LED_BUILTIN = 13;
+#include <Arduino_GFX_Library.h>
+Arduino_DataBus *bus = new Arduino_HWSPI(16 /* DC */, 5 /* CS */);
+Arduino_GFX *gfx = new Arduino_ILI9341(bus, 17 /* RST */);
 
 void setup() {
     Serial.begin(115200);
@@ -11,6 +13,8 @@ void setup() {
     for (int i = 0; i < NUM_SWITCHES; i++) {
         pinMode(switchPins[i], INPUT_PULLUP);
     }
+
+    
 }
 
 void loop() {
