@@ -1,4 +1,4 @@
-#define NUM_SWITCHES 9  // Number of switches
+#define NUM_SWITCHES 2  // Number of switches
 const int switchPins[NUM_SWITCHES] = {D1, D7};  // GPIO pins for switches
 // const int LED_BUILTIN = 13;
 
